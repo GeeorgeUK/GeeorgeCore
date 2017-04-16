@@ -91,5 +91,24 @@ plugins[#plugins+1] = lukkit.addPlugin( "GeeorgeCore", "GeeorgeOS Core-1.0-4.16.
           
     sender:sendMessage(string.gsub(table.concat(args, " "), "&", "§"))
   end)
+  
+  plugin.addCommand("plugins", "Display a list of installed plugins", "/plugins", function(sender, args)
+    if sender:hasPermission("core.plugins") == false then
+      sender:sendMessage(global.noPerms) return
+    end
+
+    local temp = {}
+
+    for n = 1, #plugins do
+      temp[n] = string.gsub(plugins[n].path, "plugins/Lukkit/", "", 1)
+    end
+    table.sort(n)
+    local n = 0
+    repeat
+      n = n + 1
+      temp[#temp+1] = plugin.config.get("plugins."..n) or nil
+    until plugin.config.get("config.plugins.extraEntries."..n) == nil or n > 1024
+    sender:sendMessage("§ePlugins ("..#temp.."): §a" .. table.concat(temp, "§f, §a") )
+  end)
 end)
   
