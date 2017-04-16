@@ -18,3 +18,9 @@ Required Permission: ```geeorge.core.help```
 Usage: ```/plugins```
 
 Required Permission: ```geeorge.core.plugins```
+
+### /ping
+
+- Check if the server is responding, or play a game of ping pong with the server
+
+Usage: ```/ping [message]```
