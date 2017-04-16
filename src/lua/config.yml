@@ -1,1 +1,25 @@
 # This is the default configuration file.
+
+# This section is for the help command:
+
+help:
+  
+  # How many commands should we show per page when /help is run?
+  entriesPerPage: 8
+  
+  # Should permission nodes be shown to players with the node: 'geeorge.core.help.permissions'?
+  showPermission: false
+  
+  # Should entries be hidden if the user doesn't have permission?
+  hidden: true
+  # Should entries be struck through or greyed out if the user does not have permission?
+  # This section will be ignored if hidden is true.
+  struck: false
+  greyed: true
+  
+# This section is for the ping command:
+
+ping:
+  
+  # The default message that should show up when no arguments are processed
+  default: §ePong!
