@@ -30,7 +30,7 @@ end
 commands["help"], commands[#commands+1] = {cmd="help",use="/help", alias={"?","cmds","commands"}, desc="Displays a list of available commands.", perm="geeorge.core.help")
 commands["ping"], commands[#commands+1] = {cmd="ping",use="/ping", alias={"pong","pingpong"}, desc="Pong!", perm="geeorge.core.ping"}
 
-plugins[#plugins+1] = lukkit.addPlugin( "GeeorgeCore", "GeeorgeOS Core-1.0-4.16.1130-INDEV", function(plugin)
+plugins[#plugins+1] = lukkit.addPlugin( "GeeorgeCore", "GeeorgeOS Core-1.0-4.16.1135-INDEV", function(plugin)
   plugin.onEnable( function() 
     plugin.print("Plugin loaded in slot: "..#plugins) 
         
