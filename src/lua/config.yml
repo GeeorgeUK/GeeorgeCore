@@ -23,3 +23,8 @@ ping:
   
   # The default message that should show up when no arguments are processed
   default: §ePong!
+
+plugins:
+  #'1': PermissionsEx
+  #'2': AnotherExample
+  #'3': §cDisabled
