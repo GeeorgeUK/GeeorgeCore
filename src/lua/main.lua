@@ -31,7 +31,17 @@ commands["help"], commands[#commands+1] = {cmd="help",use="/help", alias={"?","c
 commands["ping"], commands[#commands+1] = {cmd="ping",use="/ping", alias={"pong","pingpong"}, desc="Pong!", perm="geeorge.core.ping"}
 
 plugins[#plugins+1] = lukkit.addPlugin( "GeeorgeCore", "GeeorgeOS Core-1.0-4.16.1054-INDEV", function(plugin)
-  plugin.onEnable( function() plugin.print("Plugin loaded in slot: "..#plugins) end)
+  plugin.onEnable( function() 
+    plugin.print("Plugin loaded in slot: "..#plugins) 
+        
+    plugin.config.setDefault("help.entriesPerPage", 8)
+    plugin.config.setDefault("help.showPermission", false)
+    plugin.config.setDefault("help.hidden", true)
+    plugin.config.setDefault("help.struck", false)
+    plugin.config.setDefault("help.greyed", true)
+        
+    plugin.config.save()
+  end)
   plugin.onDisable( function() plugin.warn("Plugin has been disabled!") end)
     
   plugin.addCommand( "help", "Displays a list of available commands", "/help [page]", function(sender, args)
@@ -68,6 +78,18 @@ plugins[#plugins+1] = lukkit.addPlugin( "GeeorgeCore", "GeeorgeOS Core-1.0-4.16.
         return
       end
     end
+  end)
+      
+  plugin.addCommand("ping", "Pong!", "/ping", function(sender, args)
+    if sender:hasPermission("geeorge.core.ping") == false then
+      sender:sendMessage(global.noPerm) return
+    end
+          
+    if not args[1] or sender:hasPermission("geeorge.core.ping.custom") == false then
+      sender:sendMessage(plugin.config.get("ping.default") or "§ePong!") return
+    end
+          
+    sender:sendMessage(string.gsub(table.concat(args, " "), "&", "§"))
   end)
 end)
   
