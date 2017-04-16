@@ -27,8 +27,9 @@ function global.spairs(t, order)
   end
 end
 
-commands["help"], commands[#commands+1] = {cmd="help",use="/help", alias={"?","cmds","commands"}, desc="Displays a list of available commands.", perm="geeorge.core.help")
+commands["help"], commands[#commands+1] = {cmd="help",use="/help [page]", alias={"?","cmds","commands"}, desc="Displays a list of available commands.", perm="geeorge.core.help")
 commands["ping"], commands[#commands+1] = {cmd="ping",use="/ping", alias={"pong","pingpong"}, desc="Pong!", perm="geeorge.core.ping"}
+commands["plugins"], commans[#commands+1] = {cmd="plugins",use="/plugins", alias={"pl"}, desc="Display a list of plugins", perm="geeorge.core.plugins"}
 
 plugins[#plugins+1] = lukkit.addPlugin( "GeeorgeCore", "GeeorgeOS Core-1.0-4.16.1135-INDEV", function(plugin)
   plugin.onEnable( function() 
