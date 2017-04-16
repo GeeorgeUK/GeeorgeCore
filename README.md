@@ -24,3 +24,6 @@ Required Permission: ```geeorge.core.plugins```
 - Check if the server is responding, or play a game of ping pong with the server
 
 Usage: ```/ping [message]```
+
+Required Permission: ```geeorge.core.ping```
+For Custom Response: ```geeorge.core.ping.custom```
