@@ -5,7 +5,7 @@ Core Plugin for a Lukkit Server
 
 ### /help
 
-Shows a list of commands available from the Lukkit api. Does not show vanilla commands yet!
+Shows a list of commands available from the Lukkit api. Does not show vanilla commands unless they are manually added (for now!)
 
 Usage: ```/help [page]```
 
